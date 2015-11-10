@@ -8,6 +8,17 @@
 </head>
 <body>
 
+<script id="login-tpl" type="text/template">
+    <header class="bar bar-nav">
+        <h1 class="title">Login</h1>
+    </header>
+    <div class="content content-padded">
+        <input class="username" type="text" placeholder="Username"/>
+        <input class="password" type="password" placeholder="Password"/>
+        <button id="login_btn">Login</button>
+    </div>
+</script>
+
 <script id="home-tpl" type="text/template">
     <header class="bar bar-nav">
         <h1 class="title">Directory</h1>
@@ -98,6 +109,8 @@
 <script src="lib/fastclick.js"></script>
 <script src="lib/handlebars.js"></script>
 <script src="js/services/memory/EmployeeService.js"></script>
+<script src="js/global.js"></script>
+<script src="js/LoginView.js"></script>
 <script src="js/EmployeeListView.js"></script>
 <script src="js/HomeView.js"></script>
 <script src="js/EmployeeView.js"></script>

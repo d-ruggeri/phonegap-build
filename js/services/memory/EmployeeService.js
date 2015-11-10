@@ -7,6 +7,20 @@ var EmployeeService = function() {
         return deferred.promise();
     }
 
+    this.login = function(username, password) {
+        var deferred = $.Deferred();
+        var user = null;
+        var l = users.length;
+        for (var i=0; i < l; i++) {
+            if (users[i].userName == username && users[i].password == password) {
+                user = users[i];
+                break;
+            }
+        }
+        deferred.resolve(user);
+        return deferred.promise();
+    }
+    
     this.findById = function(id) {
         var deferred = $.Deferred();
         var employee = null;
@@ -31,6 +45,11 @@ var EmployeeService = function() {
         return deferred.promise();
     }
 
+    var users = [
+        {"id": 1, "firstName": "Diego", "lastName": "Ruggeri", "userName": "a138571", "password": "test1"},
+        {"id": 2, "firstName": "Stefano", "lastName": "Calandri", "userName": "a529317", "password": "test2"}
+    ];
+    
     var employees = [
         {"id": 1, "firstName": "James", "lastName": "King", "managerId": 0, "managerName": "", "title": "President and CEO", "department": "Corporate", "cellPhone": "617-000-0001", "officePhone": "781-000-0001", "email": "jking@fakemail.com", "city": "Boston, MA", "pic": "James_King.jpg", "twitterId": "@fakejking", "blog": "http://coenraets.org"},
         {"id": 2, "firstName": "Julie", "lastName": "Taylor", "managerId": 1, "managerName": "James King", "title": "VP of Marketing", "department": "Marketing", "cellPhone": "617-000-0002", "officePhone": "781-000-0002", "email": "jtaylor@fakemail.com", "city": "Boston, MA", "pic": "Julie_Taylor.jpg", "twitterId": "@fakejtaylor", "blog": "http://coenraets.org"},
