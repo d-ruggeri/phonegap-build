@@ -17,8 +17,8 @@ var LoginView = function(service) {
         service.login($('.username').val(), $('.password').val()).done(function (user) {
             window.loggedUser = user;
             if (user != null) {
-                window.alert("Benvenuto, " + window.loggedUser);
-                window.location.href = '#home';
+                //window.alert("Benvenuto, " + window.loggedUser);
+                window.location.href = '#devices';
             }
         });
     };

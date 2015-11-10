@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns       = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "com.enel.a138571.employeedirectory"
-        versionCode = "10"
-        version     = "1.1.0">
+        id          = "com.enel.hackday.group13"
+        versionCode = "1"
+        version     = "0.1.0">
  
-    <name>Employee Directory</name>
+    <name>Device Manager</name>
  
     <description>
-        A simple employee directory application
+        An electric device control application
     </description>
  
-    <author href="http://coenraets.org" email="ccoenraets@gmail.com">
-        Christophe Coenraets
+    <author href="http://www.enel.com" email="not-available@enel.com">
+        Enel S.p.A.
     </author>
  
+    <!--
     <feature name="http://api.phonegap.com/1.0/camera"/>
     <feature name="http://api.phonegap.com/1.0/contacts"/>
     <feature name="http://api.phonegap.com/1.0/file"/>
@@ -22,5 +23,6 @@
     <feature name="http://api.phonegap.com/1.0/media"/>
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/notification"/>
+    -->
  
 </widget>

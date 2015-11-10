@@ -3,25 +3,24 @@
 
     /* ---------------------------------- Local Variables ---------------------------------- */
     LoginView.prototype.template = Handlebars.compile($("#login-tpl").html());
-    HomeView.prototype.template = Handlebars.compile($("#home-tpl").html());
-    EmployeeListView.prototype.template = Handlebars.compile($("#employee-list-tpl").html());
-    EmployeeView.prototype.template = Handlebars.compile($("#employee-tpl").html());
+    DeviceListView.prototype.template = Handlebars.compile($("#device-list-tpl").html());
+    DeviceView.prototype.template = Handlebars.compile($("#device-tpl").html());
     
-    var service = new EmployeeService();
+    var service = new DeviceService();
     service.initialize().done(function () {
         router.addRoute('', function() {
             $('body').html(new LoginView(service).render().$el);
         });
         
-        router.addRoute('home', function() {
+        router.addRoute('devices', function() {
             //if (!checkLogin()) return;
-            $('body').html(new HomeView(service).render().$el);
+            $('body').html(new DeviceListView(service, window.loggedUser).render().$el);
         });
         
-        router.addRoute('employees/:id', function(id) {
+        router.addRoute('device/:id', function(id) {
             //if (!checkLogin()) return;
-            service.findById(parseInt(id)).done(function(employee) {
-                $('body').html(new EmployeeView(employee).render().$el);
+            service.findById(parseInt(id)).done(function(device) {
+                $('body').html(new DeviceView(device).render().$el);
             });
         });
         

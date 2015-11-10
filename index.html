@@ -10,42 +10,41 @@
 
 <script id="login-tpl" type="text/template">
     <header class="bar bar-nav">
-        <h1 class="title">Login</h1>
+        <h1 class="title">Accedi al servizio</h1>
     </header>
     <div class="content content-padded">
-        <input class="username" type="text" placeholder="Username"/>
-        <input class="password" type="password" placeholder="Password"/>
-        <button id="login_btn">Login</button>
+        <input class="username" type="text" placeholder="Username" value="a138571"/>
+        <input class="password" type="password" placeholder="Password" value="test"/>
+        <button class="btn btn-block pull-center" id="login_btn">Login</button>
     </div>
 </script>
 
-<script id="home-tpl" type="text/template">
+
+<script id="device-list-tpl" type="text/template">
     <header class="bar bar-nav">
-        <h1 class="title">Directory</h1>
+        <h1 class="title">I miei dispositivi</h1>
     </header>
-    <div class="bar bar-standard bar-header-secondary">
-        <input class='search-key' type="search"/>
+    <div class="content content-padded">
+        <ul class="table-view">
+            {{#each this}}
+            <li class="table-view-cell media">
+                <a href="#device/{{id}}">
+                    <img class="media-object pull-left" src="assets/pics/{{tipo}}.png">
+                    <div class="media-body">
+                        {{nome}}
+                        <p>{{posizione}}</p>
+                    </div>
+                </a>
+                <div class="toggle">
+                    <div class="toggle-handle"></div>
+                </div>                    
+            </li>
+            {{/each}}
+        </ul>
     </div>
-    <div class="content"></div>
 </script>
 
-<script id="employee-list-tpl" type="text/template">
-    <ul class="table-view">
-        {{#each this}}
-        <li class="table-view-cell media">
-            <a href="#employees/{{id}}">
-                <img class="media-object pull-left" src="assets/pics/{{pic}}">
-                <div class="media-body">
-                    {{firstName}} {{lastName}}
-                    <p>{{title}}</p>
-                </div>
-            </a>
-        </li>
-        {{/each}}
-    </ul>
-</script>
-
-<script id="employee-tpl" type="text/template">
+<script id="device-tpl" type="text/template">
     <header class="bar bar-nav">
         <a class="btn btn-link btn-nav pull-left" href="#">
             <span class="icon icon-left-nav"></span>
@@ -56,7 +55,7 @@
         <div class="card">
             <ul class="table-view">
                 <li class="table-view-cell media">
-                    <img class="media-object pull-left emp-pic" src="assets/pics/{{pic}}">
+                    <img class="media-object pull-left emp-pic" src="assets/pics/{{type}}.png">
                     <div class="media-body">
                         {{ firstName }} {{ lastName }}
                         <p>{{ title }}</p>
@@ -108,12 +107,12 @@
 <script src="lib/router.js"></script>
 <script src="lib/fastclick.js"></script>
 <script src="lib/handlebars.js"></script>
-<script src="js/services/memory/EmployeeService.js"></script>
+<script src="lib/ratchet.js"></script>
+<script src="js/DeviceService.js"></script>
 <script src="js/global.js"></script>
 <script src="js/LoginView.js"></script>
-<script src="js/EmployeeListView.js"></script>
-<script src="js/HomeView.js"></script>
-<script src="js/EmployeeView.js"></script>
+<script src="js/DeviceListView.js"></script>
+<script src="js/DeviceView.js"></script>
 <script src="js/app.js"></script>
 
 </body>
