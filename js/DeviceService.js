@@ -24,12 +24,17 @@ var DeviceService = function() {
     this.findByUserId = function(userId) {
         var deferred = $.Deferred();
         var deviceList = [];
+        var potenzaTot = 0;
         var l = devices.length;
         for (var i=0; i < l; i++) {
             if (devices[i].userId === userId) {
+                devices[i].notRunning = (devices[i].potenzaIstantanea == 0);
+                devices[i].warning = !devices[i].running && (devices[i].potenzaIstantanea > devices[i].potenzaClasse);
+                potenzaTot += devices[i].potenzaIstantanea;
                 deviceList.push(devices[i]);
             }
         }
+        window.potenzaTotale = potenzaTot;
         deferred.resolve(deviceList);
         return deferred.promise();
     }
@@ -41,15 +46,13 @@ var DeviceService = function() {
     ];
     
     var devices = [
-        {"id": 1, "userId": 1, "nome": "Lavatrice", "tipo": "lavatrice", "posizione": "Stanza da bagno", "stato": "on", "potenzaIstantanea": 300},
-        {"id": 2, "userId": 1, "nome": "Scaldabagno", "tipo": "lavatrice", "posizione": "Stanza da bagno", "stato": "on", "potenzaIstantanea": 300},
-        {"id": 3, "userId": 1, "nome": "TV", "tipo": "tv", "posizione": "Soggiorno", "stato": "off", "potenzaIstantanea": 300},
-        {"id": 4, "userId": 1, "nome": "Impianto fotovoltaico", "tipo": "pannellofotov", "posizione": "Tetto", "stato": "on", "potenzaIstantanea": 1000},
-        {"id": 5, "userId": 1, "nome": "Fornitura elettrica", "tipo": "rete", "posizione": "Casa", "stato": "off", "potenzaIstantanea": 0},
-        {"id": 6, "userId": 1, "nome": "Forno", "tipo": "forno", "posizione": "Casa", "stato": "off", "potenzaIstantanea": 0},
-        {"id": 7, "userId": 1, "nome": "Frigorifero", "tipo": "frigo", "posizione": "Casa", "stato": "off", "potenzaIstantanea": 0},
-        {"id": 8, "userId": 1, "nome": "Stereo", "tipo": "stereo", "posizione": "Casa", "stato": "off", "potenzaIstantanea": 0},
-        {"id": 9, "userId": 1, "nome": "Lavastoviglie", "tipo": "lavastov", "posizione": "Casa", "stato": "off", "potenzaIstantanea": 0}
+        {"id": 1, "userId": 1, "nome": "Lavatrice", "tipo": "lavatrice", "posizione": "Stanza da bagno", "stato": "on", "potenzaIstantanea": 300, "potenzaClasse": 500},
+        {"id": 2, "userId": 1, "nome": "Scaldabagno", "tipo": "lavatrice", "posizione": "Stanza da bagno", "stato": "on", "potenzaIstantanea": 200, "potenzaClasse": 1200},
+        {"id": 3, "userId": 1, "nome": "TV", "tipo": "tv", "posizione": "Soggiorno", "stato": "off", "potenzaIstantanea": 0, "potenzaClasse": 200},
+        {"id": 4, "userId": 1, "nome": "Forno", "tipo": "forno", "posizione": "Casa", "stato": "off", "potenzaIstantanea": 1000, "potenzaClasse": 800},
+        {"id": 5, "userId": 1, "nome": "Frigorifero", "tipo": "frigo", "posizione": "Casa", "stato": "off", "potenzaIstantanea": 200, "potenzaClasse": 500},
+        {"id": 6, "userId": 1, "nome": "Stereo", "tipo": "stereo", "posizione": "Casa", "stato": "off", "potenzaIstantanea": 50, "potenzaClasse": 200},
+        {"id": 7, "userId": 1, "nome": "Lavastoviglie", "tipo": "lavastov", "posizione": "Casa", "stato": "off", "potenzaIstantanea": 0, "potenzaClasse": 500}
     ];
 
 }

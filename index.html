@@ -25,6 +25,7 @@
         <h1 class="title">I miei dispositivi</h1>
     </header>
     <div class="content content-padded">
+        <button class="btn btn-block">Potenza istantanea: 1750 W</button>   
         <ul class="table-view">
             {{#each this}}
             <li class="table-view-cell media">
@@ -35,9 +36,15 @@
                         <p>{{posizione}}</p>
                     </div>
                 </a>
-                <div class="toggle">
-                    <div class="toggle-handle"></div>
-                </div>                    
+                {{#if notRunning}}
+                    <button class="btn btn-primary" style="width:120px;">Spento<span class="badge badge-primary">{{potenzaIstantanea}} W</span></button>
+                {{else}}
+                    {{#if warning}}
+                        <button class="btn btn-negative" style="width:120px;">Allarme<span class="badge badge-primary">{{potenzaIstantanea}} W</span></button>
+                    {{else}}                
+                        <button class="btn btn-positive" style="width:120px;">Acceso<span class="badge badge-primary">{{potenzaIstantanea}} W</span></button>
+                    {{/if}}
+                {{/if}}                    
             </li>
             {{/each}}
         </ul>
