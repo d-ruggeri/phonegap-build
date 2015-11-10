@@ -53,59 +53,37 @@
 
 <script id="device-tpl" type="text/template">
     <header class="bar bar-nav">
-        <a class="btn btn-link btn-nav pull-left" href="#">
+        <a class="btn btn-link btn-nav pull-left" href="#devices">
             <span class="icon icon-left-nav"></span>
         </a>
-        <h1 class="title">Employee</h1>
-    </header>
+        <h1 class="title">{{nome}}</h1>
+            <nav class="bar bar-standard">
+          <div class="segmented-control">
+            <a class="control-item active">Ieri</a>
+            <a class="control-item">Mese scorso</a>
+            <a class="control-item">Ultima fattura</a>
+          </div>
+        </nav>
+    </header>        
     <div class="content">
-        <div class="card">
-            <ul class="table-view">
-                <li class="table-view-cell media">
-                    <img class="media-object pull-left emp-pic" src="assets/pics/{{type}}.png">
-                    <div class="media-body">
-                        {{ firstName }} {{ lastName }}
-                        <p>{{ title }}</p>
-                    </div>
-                </li>
-                <li class="table-view-cell media">
-                    <a href="tel:{{ officePhone }}" class="push-right">
-                        <span class="media-object pull-left icon icon-call"></span>
-                        <div class="media-body">
-                            Call Office
-                            <p>{{ officePhone }}</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="table-view-cell media">
-                    <a href="tel:{{ cellPhone }}" class="push-right">
-                        <span class="media-object pull-left icon icon-call"></span>
-                        <div class="media-body">
-                            Call Cell
-                            <p>{{ cellPhone }}</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="table-view-cell media">
-                    <a href="sms:{{ cellPhone }}" class="push-right">
-                        <span class="media-object pull-left icon icon-sms"></span>
-                        <div class="media-body">
-                            SMS
-                            <p>{{ cellPhone }}</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="table-view-cell media">
-                    <a href="mailto:{{ email }}" class="push-right">
-                        <span class="media-object pull-left icon icon-mail"></span>
-                        <div class="media-body">
-                            Email
-                            <p>{{ email }}</p>
-                        </div>
-                    </a>
-                </li>
-            </ul>
+        <!-- Segmented control in standard bar fixed to top -->
+
+
+        <!-- Block button in standard bar fixed below top bar -->
+        <div class="bar bar-standard bar-header-secondary">
+          <button class="btn btn-block">Block level button</button>
         </div>
+
+        <!-- Block button in standard bar fixed above the footer -->
+        <div class="bar bar-standard bar-footer-secondary">
+          <button class="btn btn-block">Block level button</button>
+        </div>
+
+        <!-- Icons in standard bar fixed to the bottom of the screen -->
+        <div class="bar bar-standard bar-footer">
+          <a class="icon icon-compose pull-left"></a>
+          <a class="icon icon-gear pull-right"></a>
+        </div>    
     </div>
 </script>
 

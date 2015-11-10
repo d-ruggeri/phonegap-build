@@ -10,7 +10,7 @@ var DeviceListView = function (service, user) {
     };
     
     this.findByUserId = function(userId) {
-        service.findByUserId(userId).done(function (devices) {
+        service.findByUserId(parseInt(userId)).done(function (devices) {
             deviceList = devices;
         });            
     };

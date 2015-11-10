@@ -38,6 +38,22 @@ var DeviceService = function() {
         deferred.resolve(deviceList);
         return deferred.promise();
     }
+    
+    this.findById = function(id) {
+        var deferred = $.Deferred();
+        var device = null;
+        var l = devices.length;
+        for (var i=0; i < l; i++) {
+            if (devices[i].id === id) {
+                devices[i].notRunning = (devices[i].potenzaIstantanea == 0);
+                devices[i].warning = !devices[i].running && (devices[i].potenzaIstantanea > devices[i].potenzaClasse);
+                device = devices[i];
+                break;
+            }
+        }
+        deferred.resolve(device);
+        return deferred.promise();
+    }    
 
     var users = [
         {"id": 1, "firstName": "Diego", "lastName": "Ruggeri", "userName": "a138571", "password": "test"},
