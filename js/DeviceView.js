@@ -41,7 +41,7 @@ var DeviceView = function(device) {
                 }
             ]
         };
-        ctx.canvas.width = 400;
+        ctx.canvas.width = 250;
         ctx.canvas.height = 200;
         var myNewChart = new Chart(ctx).Bar(data, options);
     }
@@ -74,7 +74,7 @@ var DeviceView = function(device) {
                 }
             ]
         };
-        ctx.canvas.width = 400;
+        ctx.canvas.width = 250;
         ctx.canvas.height = 200;        
         var myNewChart = new Chart(ctx).Bar(data, options);
     }
@@ -107,7 +107,7 @@ var DeviceView = function(device) {
                 }
             ]
         };
-        ctx.canvas.width = 400;
+        ctx.canvas.width = 250;
         ctx.canvas.height = 200;        
         var myNewChart = new Chart(ctx).Bar(data, options);
     }
