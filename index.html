@@ -14,7 +14,7 @@
         <h1 class="title">Accedi al servizio</h1>
     </header>
     <div class="content content-padded">
-        <input class="username" type="text" placeholder="Username" value="a138571"/>
+        <input class="username" type="text" placeholder="Username" value="team13"/>
         <input class="password" type="password" placeholder="Password" value="test"/>
         <button class="btn btn-block pull-center" id="login_btn">Login</button>
     </div>
@@ -68,21 +68,25 @@
             </div>
             <div class="card">
               <span id="item1mobile" class="control-content active grafico"><canvas id="chart1mobile"></canvas></span>
-              <span id="item2mobile" class="control-content grafico">Ultimo mese</span>
-              <span id="item3mobile" class="control-content grafico">Ultima fattura</span>
+              <span id="item2mobile" class="control-content grafico"><canvas id="chart2mobile"></canvas></span>
+              <span id="item3mobile" class="control-content grafico"><canvas id="chart3mobile"></canvas></span>
+            </div>
+        </div>
+    
+        <div class="card">
+            <div class="content-padded">
+                <div class="toggle active">
+                  <div class="toggle-handle"></div>
+                </div>
             </div>
         </div>
 
-        <!-- Block button in standard bar fixed above the footer -->
-        <div class="bar bar-standard bar-footer-secondary">
-          <button class="btn btn-block">Block level button</button>
-        </div>
-
         <!-- Icons in standard bar fixed to the bottom of the screen -->
-        <div class="bar bar-standard bar-footer">
-          <a class="icon icon-compose pull-left" href="https://www.enelenergia.it/mercato/libero/it-IT/lead_generation">Acquista</a>
-          <a class="icon icon-gear pull-right" href="#techs/{{id}}">Cerca un tecnico</a>
-        </div>    
+        <nav class="bar bar-tab">
+            <a class="tab-item" href="https://www.enelenergia.it/mercato/libero/it-IT/lead_generation">Acquista</a>
+            <a class="tab-item" href="#techs/{{id}}">Cerca un tecnico</a>
+        </nav>
+        
     </div>
 </script>
 

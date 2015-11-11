@@ -56,7 +56,7 @@ var DeviceService = function() {
     }    
 
     var users = [
-        {"id": 1, "firstName": "Diego", "lastName": "Ruggeri", "userName": "a138571", "password": "test"},
+        {"id": 1, "firstName": "Diego", "lastName": "Ruggeri", "userName": "team13", "password": "test"},
         {"id": 2, "firstName": "Stefano", "lastName": "Calandri", "userName": "a529317", "password": "test"},
         {"id": 3, "firstName": "Vincenzo", "lastName": "Cioffi", "userName": "a436658", "password": "test"}
     ];
