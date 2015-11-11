@@ -7,14 +7,12 @@ var DeviceView = function(device) {
     this.render = function() {
         var $html = $(this.template(device));
         this.$el.html($html);
-        //setTimeout(this.createGraph(this.$el), 2000);
+        setTimeout(this.createGraph, 1000);
         return this;
     };
     
-    this.createGraph = function(html) {
-        var canv = html.find('#chart1mobile').get(0);
-        console.log(canv);
-        var ctx = canv.getContext("2d");
+    this.createGraph = function() {
+        var ctx = $('.grafico.active').find('canvas').get(0).getContext("2d");
         var options = {
             scaleBeginAtZero : true,
             scaleShowGridLines : true,

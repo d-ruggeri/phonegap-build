@@ -5,7 +5,7 @@
         versionCode = "1"
         version     = "0.1.0">
  
-    <name>Device Manager</name>
+    <name>Apparecchi</name>
  
     <description>
         An electric device control application
