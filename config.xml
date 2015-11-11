@@ -13,7 +13,7 @@
     <access origin="*" />
     <access uri="*"/>
  
-    <name>Apparecchi2</name>
+    <name>Apparecchi</name>
  
     <description>
         An electric device control application
