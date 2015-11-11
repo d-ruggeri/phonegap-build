@@ -14,6 +14,8 @@
     <author href="http://www.enel.com" email="not-available@enel.com">
         Enel S.p.A.
     </author>
+    
+    <access origin="*"/>
  
     <!--
     <feature name="http://api.phonegap.com/1.0/camera"/>

@@ -9,7 +9,26 @@
 </head>
 <body>
 
+    <div class="slider" id="mySlider">
+      <div class="slide-group">
+        <div class="slide">
+          <img src="/assets/img/slide-1.jpg">
+          <span class="slide-text">
+            <span class="icon icon-left-nav"></span>
+            Slide me
+          </span>
+        </div>
+        <div class="slide">
+          <img src="/assets/img/slide-2.jpg">
+        </div>
+        <div class="slide">
+          <img src="/assets/img/slide-3.jpg">
+        </div>
+      </div>
+    </div>
+    
 <script id="login-tpl" type="text/template">
+
     <header class="bar bar-nav">
         <h1 class="title">Accedi al servizio</h1>
     </header>
@@ -36,16 +55,16 @@
                         {{nome}}
                         <p>{{posizione}}</p>
                     </div>
-                </a>
-                {{#if notRunning}}
-                    <button class="btn" style="width:110px;">Spento<span class="badge badge-primary">{{potenzaIstantanea}} W</span></button>
-                {{else}}
-                    {{#if warning}}
-                        <button class="btn btn-negative" style="width:110px;">Allarme<span class="badge badge-primary">{{potenzaIstantanea}} W</span></button>
-                    {{else}}                
-                        <button class="btn btn-positive" style="width:110px;">Acceso<span class="badge badge-primary">{{potenzaIstantanea}} W</span></button>
+                    {{#if notRunning}}
+                        <button class="btn" style="width:110px;">Spento<span class="badge badge-primary">{{potenzaIstantanea}} W</span></button>
+                    {{else}}
+                        {{#if warning}}
+                            <button class="btn btn-negative" style="width:110px;">Allarme<span class="badge badge-primary">{{potenzaIstantanea}} W</span></button>
+                        {{else}}                
+                            <button class="btn btn-positive" style="width:110px;">Acceso<span class="badge badge-primary">{{potenzaIstantanea}} W</span></button>
+                        {{/if}}
                     {{/if}}
-                {{/if}}                    
+                </a>                
             </li>
             {{/each}}
         </ul>
