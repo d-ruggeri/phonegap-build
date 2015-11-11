@@ -5,6 +5,7 @@
     LoginView.prototype.template = Handlebars.compile($("#login-tpl").html());
     DeviceListView.prototype.template = Handlebars.compile($("#device-list-tpl").html());
     DeviceView.prototype.template = Handlebars.compile($("#device-tpl").html());
+    TechMapView.prototype.template = Handlebars.compile($("#tech-map-tpl").html());
     
     var service = new DeviceService();
     service.initialize().done(function () {
@@ -23,6 +24,13 @@
                 $('body').html(new DeviceView(device).render().$el);
             });
         });
+        
+        router.addRoute('techs/:id', function(id) {
+            //if (!checkLogin()) return;
+            service.findById(parseInt(id)).done(function(device) {
+                $('body').html(new TechMapView(device).render().$el);
+            });
+        });        
         
         router.start();
     });

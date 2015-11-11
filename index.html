@@ -5,6 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <link href="assets/ratchet/css/ratchet.css" rel="stylesheet">
     <link href="assets/css/styles.css" rel="stylesheet">
+    
+	 <script>
+var map;
+var latlng;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 45.484147, lng: 9.244839},
+    zoom: 16
+  });
+
+latlng = new google.maps.LatLng(45.484941, 9.242621 );
+latlng1 = new google.maps.LatLng(45.483035, 9.243809 );
+latlng2 = new google.maps.LatLng(45.484946, 9.247114 );
+	
+
+	
+var contentString = '<div id="content">'+
+'<div id="siteNotice">'+
+'</div>'+
+'<h1 id="firstHeading" class="firstHeading">Riparo 100% Srl</h1>'+
+'<div id="bodyContent">'+
+'<p><b>Riparo 100% Srl</b> è un azienda che sorge nel 1999 e si occupa della riparazione di caldaie, clima ed elettrodomestici.</p>'+
+'<p></p>'+
+'<p></p>'+
+'<p></p>'+
+'<p></p>'+
+'<p><b>Richiedi assistenza: <a href="tel:+393206853228">320 6853228</a></b></p>'+
+'</div>'+
+'</div>';
+
+var contentString1 = '<div id="content">'+
+'<div id="siteNotice">'+
+'</div>'+
+'<h1 id="firstHeading" class="firstHeading">Caldaie e Clima Srl</h1>'+
+'<div id="bodyContent">'+
+'<p><b>Caldaie e Clima Srl</b> è un azienda che sorge nel 2001 e si occupa della riparazione di caldaie, clima ed elettrodomestici.</p>'+
+'<p></p>'+
+'<p></p>'+
+'<p></p>'+
+'<p></p>'+
+'<p><b>Richiedi assistenza: <a href="tel:+393206853228">320 6853228</a></b></p>'+
+'</div>'+
+'</div>';
+
+var contentString2 = '<div id="content">'+
+'<div id="siteNotice">'+
+'</div>'+
+'<h1 id="firstHeading" class="firstHeading">Impianti e Caldaie Srl</h1>'+
+'<div id="bodyContent">'+
+'<p><b>Impianti e Caldaie Srl</b> è un azienda che sorge nel 1985 e si occupa della relaizzazione di impianti e riparazione di caldaie, clima ed elettrodomestici.</p>'+
+'<p></p>'+
+'<p></p>'+
+'<p></p>'+
+'<p></p>'+
+'<p><b>Richiedi assistenza: <a href="tel:+393206853228">320 6853228</a></b></p>'+
+'</div>'+
+'</div>';
+
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+  var infowindow1 = new google.maps.InfoWindow({
+    content: contentString1
+  });
+  var infowindow2 = new google.maps.InfoWindow({
+    content: contentString2
+  });
+  
+  var marker = new google.maps.Marker({
+                    position: latlng, 
+                    map: map, 
+                    title:' Riparo 100% Srl'
+                });
+
+  marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
+  
+var marker1 = new google.maps.Marker({
+                    position: latlng1, 
+                    map: map, 
+                    title:' Caldaie e Clima Srl'
+                });
+   marker1.addListener('click', function() {
+    infowindow1.open(map, marker1);
+  });
+  
+  
+var marker2 = new google.maps.Marker({
+                    position: latlng2, 
+                    map: map, 
+                    title:'Impianti e Caldaie Srl'
+                });
+				
+   marker2.addListener('click', function() {
+    infowindow2.open(map, marker2);
+  });
+   
+  
+}
+
+
+
+	</script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWUl_jhUQKFAkPDhJFDCvvAnvWF84U2RY&callback=initMap"
+        async defer></script>
 </head>
 <body>
 
@@ -25,7 +131,7 @@
         <h1 class="title">I miei dispositivi</h1>
     </header>
     <div class="content content-padded">
-        <button class="btn btn-block">Potenza istantanea: 1650 W</button>   
+        <button id="potenzaIstantanea" class="btn btn-block"></button>   
         <ul class="table-view">
             {{#each this}}
             <li class="table-view-cell media">
@@ -57,21 +163,19 @@
             <span class="icon icon-left-nav"></span>
         </a>
         <h1 class="title">{{nome}}</h1>
-            <nav class="bar bar-standard">
-          <div class="segmented-control">
-            <a class="control-item active">Ieri</a>
-            <a class="control-item">Mese scorso</a>
-            <a class="control-item">Ultima fattura</a>
-          </div>
-        </nav>
     </header>        
     <div class="content">
-        <!-- Segmented control in standard bar fixed to top -->
-
-
-        <!-- Block button in standard bar fixed below top bar -->
-        <div class="bar bar-standard bar-header-secondary">
-          <button class="btn btn-block">Block level button</button>
+        <div class="content-padded">
+            <div class="segmented-control">
+              <a class="control-item active" href="#item1mobile">Ieri</a>
+              <a class="control-item" href="#item2mobile">Ultimo mese</a>
+              <a class="control-item" href="#item3mobile">Ultima fattura</a>
+            </div>
+            <div class="card">
+              <span id="item1mobile" class="control-content active"><canvas id="chart1mobile"></canvas></span>
+              <span id="item2mobile" class="control-content">Ultimo mese</span>
+              <span id="item3mobile" class="control-content">Ultima fattura</span>
+            </div>
         </div>
 
         <!-- Block button in standard bar fixed above the footer -->
@@ -81,10 +185,20 @@
 
         <!-- Icons in standard bar fixed to the bottom of the screen -->
         <div class="bar bar-standard bar-footer">
-          <a class="icon icon-compose pull-left"></a>
-          <a class="icon icon-gear pull-right"></a>
+          <a class="icon icon-compose pull-left" href="https://www.enelenergia.it/mercato/libero/it-IT/lead_generation">Acquista</a>
+          <a class="icon icon-gear pull-right" href="#techs/{{id}}">Cerca un tecnico</a>
         </div>    
     </div>
+</script>
+
+<script id="tech-map-tpl" type="text/template">
+    <header class="bar bar-nav">
+        <a class="btn btn-link btn-nav pull-left" href="#device/{{id}}">
+            <span class="icon icon-left-nav"></span>
+        </a>
+        <h1 class="title">I tecnici vicino a me</h1>
+    </header>    
+    <div class="content" id="map"></div>
 </script>
 
 <script src="cordova.js"></script>
@@ -93,11 +207,13 @@
 <script src="lib/fastclick.js"></script>
 <script src="lib/handlebars.js"></script>
 <script src="lib/ratchet.js"></script>
+<script src="lib/chart.min.js"></script>
 <script src="js/DeviceService.js"></script>
 <script src="js/global.js"></script>
 <script src="js/LoginView.js"></script>
 <script src="js/DeviceListView.js"></script>
 <script src="js/DeviceView.js"></script>
+<script src="js/TechMapView.js"></script>
 <script src="js/app.js"></script>
 
 </body>

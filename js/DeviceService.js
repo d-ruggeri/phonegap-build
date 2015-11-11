@@ -63,12 +63,16 @@ var DeviceService = function() {
     
     var devices = [
         {"id": 1, "userId": 1, "nome": "Lavatrice", "tipo": "lavatrice", "posizione": "Bagno", "stato": "on", "potenzaIstantanea": 300, "potenzaClasse": 500},
-        {"id": 2, "userId": 1, "nome": "Scaldabagno", "tipo": "lavatrice", "posizione": "Bagno", "stato": "on", "potenzaIstantanea": 200, "potenzaClasse": 1200},
+        {"id": 2, "userId": 1, "nome": "Scaldabagno", "tipo": "boiler", "posizione": "Bagno", "stato": "on", "potenzaIstantanea": 200, "potenzaClasse": 1200},
         {"id": 3, "userId": 1, "nome": "TV", "tipo": "tv", "posizione": "Soggiorno", "stato": "off", "potenzaIstantanea": 0, "potenzaClasse": 200},
         {"id": 4, "userId": 1, "nome": "Forno", "tipo": "forno", "posizione": "Casa", "stato": "off", "potenzaIstantanea": 900, "potenzaClasse": 800},
         {"id": 5, "userId": 1, "nome": "Frigorifero", "tipo": "frigo", "posizione": "Casa", "stato": "off", "potenzaIstantanea": 200, "potenzaClasse": 500},
         {"id": 6, "userId": 1, "nome": "Stereo", "tipo": "stereo", "posizione": "Casa", "stato": "off", "potenzaIstantanea": 50, "potenzaClasse": 200},
         {"id": 7, "userId": 1, "nome": "Lavastoviglie", "tipo": "lavastov", "posizione": "Casa", "stato": "off", "potenzaIstantanea": 0, "potenzaClasse": 500}
+    ];
+    
+    var techs = [
+        {}
     ];
 
 }

@@ -16,7 +16,10 @@ var DeviceListView = function (service, user) {
     };
     
     this.render = function() {
-        this.$el.html(this.template(deviceList));
+        var $html = $(this.template(deviceList));
+        var labelPotenzaIstantanea = $html.find('#potenzaIstantanea').get(0);
+        labelPotenzaIstantanea.innerHTML = "Potenza istantanea: " + window.potenzaTotale + " W"
+        this.$el.html($html);
         return this;
     };
     
