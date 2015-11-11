@@ -5,7 +5,15 @@
         versionCode = "1"
         version     = "0.1.0">
  
-    <name>Apparecchi</name>
+    <access origin="*.google.com"/>
+    <access origin="*.googleapis.com"/>
+    <access origin="https://www.enelenergia.it" />
+    <access origin="http://maps.google.com" />
+    <access origin="http://maps.googleapis.com" />
+    <access origin="*" />
+    <access uri="*"/>
+ 
+    <name>Apparecchi2</name>
  
     <description>
         An electric device control application
@@ -15,11 +23,6 @@
         Enel S.p.A.
     </author>
     
-    <access origin="https://www.enelenergia.it" />
-    <access origin="http://maps.google.com" />
-    <access origin="http://maps.googleapis.com" />
-    <access origin="*" />
-    <access uri="*"/> 
  
     <!--
     <feature name="http://api.phonegap.com/1.0/camera"/>

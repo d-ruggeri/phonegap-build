@@ -8,8 +8,8 @@ var DeviceView = function(device) {
         var $html = $(this.template(device));
         this.$el.html($html);
         setTimeout(this.createGraph1, 1000);
-        setTimeout(this.createGraph2, 1000);
-        setTimeout(this.createGraph3, 1000);
+        setTimeout(this.createGraph2, 3000);
+        setTimeout(this.createGraph3, 5000);
         return this;
     };
     
