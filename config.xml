@@ -15,7 +15,11 @@
         Enel S.p.A.
     </author>
     
-    <access origin="*"/>
+    <access origin="https://www.enelenergia.it" />
+    <access origin="http://maps.google.com" />
+    <access origin="http://maps.googleapis.com" />
+    <access origin="*" />
+    <access uri="*"/> 
  
     <!--
     <feature name="http://api.phonegap.com/1.0/camera"/>
